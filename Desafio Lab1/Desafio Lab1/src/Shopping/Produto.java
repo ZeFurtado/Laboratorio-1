@@ -4,6 +4,8 @@ public class Produto {
    private String nome;
    private double preco;
 
+   private Data dataDeValidade =  new Data();
+
    public void Produto(String nome, double preco)
    {
        this.nome = nome;
@@ -24,6 +26,10 @@ public class Produto {
 
    public String toString(){
        return "O produto: " +nome+ "custa " +preco;
+   }
+
+   public void setDataDeValidade(){
+
    }
 
 }
