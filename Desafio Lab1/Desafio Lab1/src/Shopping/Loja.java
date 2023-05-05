@@ -5,11 +5,11 @@ public class Loja {
     private int quantidadeFuncionarios;
     private double salarioBaseFuncionario;
 
-    private Endereco endereco = new Endereco();
-    private Data dataDeFundacao = new Data();
+    private Endereco endereco;
+    private Data dataDeFundacao;
 
 
-    Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao) {
+    public Loja(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         this.salarioBaseFuncionario = salarioBaseFuncionario;
@@ -17,7 +17,7 @@ public class Loja {
         this.dataDeFundacao = dataDeFundacao;
     }
 
-    Loja(String nome, int quantidadeFuncionarios) {
+    public Loja(String nome, int quantidadeFuncionarios, Endereco endereco, Data dataDeFundacao) {
         this.nome = nome;
         this.quantidadeFuncionarios = quantidadeFuncionarios;
         salarioBaseFuncionario = -1;
@@ -55,10 +55,10 @@ public class Loja {
         return endereco;
     }
 
-    public void setDataDeFundacao(Data dataDeFundacao){
+    public void setDataFundacao(Data dataDeFundacao){
         this.dataDeFundacao = dataDeFundacao;
     }
-    public Data getDataDeFundacao(){
+    public Data getDataFundacao(){
         return dataDeFundacao;
     }
 
@@ -67,7 +67,7 @@ public class Loja {
         return ("A loja " + nome + " possuí "+quantidadeFuncionarios+"funcionários e o salário base deles é de R$:"+salarioBaseFuncionario);
     }
 
-    public double gastoscomSalario() {
+    public double gastosComSalario() {
         if(salarioBaseFuncionario > 0)
         {
             return salarioBaseFuncionario * quantidadeFuncionarios;

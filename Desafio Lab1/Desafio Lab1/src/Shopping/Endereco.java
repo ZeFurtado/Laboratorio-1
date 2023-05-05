@@ -6,10 +6,12 @@ public class Endereco {
     private String estado;
     private String pais;
     private String cep;
+
+    private String numero;
     private String complemento;
 
 
-    public void Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String complemento){
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,String complemento){
         this.nomeDaRua = nomeDaRua;
         this.cidade = cidade;
         this.estado = estado;
@@ -58,6 +60,13 @@ public class Endereco {
         return cep;
     }
 
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
 
     public void setComplemento(String complemento){
         this.complemento = complemento;

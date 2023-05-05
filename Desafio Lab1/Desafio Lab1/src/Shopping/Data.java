@@ -5,32 +5,30 @@ public class Data {
     private int mes;
     private int ano;
 
-    public void Data(int dia, int mes, int ano){
+    public Data(int dia, int mes, int ano){
         if(dia>0 && dia<=31 && mes>0 && mes<=12 && ano>0) {
-
             //Se o mês for fevereiro, verifica se o ano é bissexto para receber mais de 28 dias
             if(mes == 2){
-                int anoBissexto = ano; //Variavel criada para calcular se o ano é bissexto
-
-                while(anoBissexto > 4){
-                    anoBissexto = anoBissexto / 4;
-                }
-                if(dia>28 || anoBissexto !=1 ){
+                if(dia<29){ //Se o dia for menor que 29 idependente do ano ele passa
+                    this.dia = dia;
+                    this.mes = mes;
+                    this.ano = ano;
+                }else if(dia == 29 && verificaAnoBissexto()){ //Se o dia for igual a 29 o ano precisa ser bissexto
+                    this.dia = dia;
+                    this.mes = mes;
+                    this.ano = ano;
+                }else{
                     this.dia = 1;
                     this.mes = 1;
                     this.ano = 2000;
-                }else{
-                    this.dia = dia;
-                    this.mes = mes;
-                    this.ano = ano;
                 }
-            }
+            }//Caso o dia for menor que 31 ele pode ser inserido nesses meses
             else if((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia < 31){
-
                     this.dia = dia;
                     this.mes = mes;
                     this.ano = ano;
 
+              //Caso o dia for maior 31 ele só pode ser inserido nesses meses
             } else if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
 
                 this.dia = dia;
@@ -51,15 +49,41 @@ public class Data {
     }
 
     public void setDia(int dia){
-        this.dia = dia;
+        if(dia>0 && dia<=31){
+            if(mes == 2){
+                if(dia<29){ //Se o dia for menor que 29 idependente do ano ele passa
+                    this.dia = dia;
+                }else if(dia == 29 && verificaAnoBissexto()){ //Se o dia for igual a 29 o ano precisa ser bissexto
+                    this.dia = dia;
+                }else{
+                    this.dia = 1;
+                }
+            }
+            //Caso o dia for menor que 31 ele pode ser inserido nesses meses
+        } else if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia < 31) {
+            this.dia = dia;
+        }//Caso o dia for maior 31 ele só pode ser inserido nesses meses
+        else if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
+            this.dia = dia;
+        }
+        else if(mes == 0){
+            this.dia = dia;
+        }//Caso nenhuma das alternativas anteriores der certo o dia vai ficar como 1
+        else{
+            this.dia = 1;
+        }
     }
     public int getDia(){
         return dia;
     }
 
-
     public void setMes(int mes){
-        this.mes = mes;
+        if(mes > 0 && mes <= 12){
+
+        }else {
+            this.mes = 1;
+        }
+
     }
     public int getMes(){
         return mes;
@@ -78,11 +102,10 @@ public class Data {
     }
 
     public boolean verificaAnoBissexto(){
-        while(ano > 4){
-            ano = ano / 4;
+        while(ano >= 4){
+            ano = ano - 4;
         }
-
-        if(ano == 1){
+        if(ano == 0){
             return true;
         }else{
             return false;
