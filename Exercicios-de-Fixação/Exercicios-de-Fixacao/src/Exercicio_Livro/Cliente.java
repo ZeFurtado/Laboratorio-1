@@ -68,7 +68,7 @@ public class Cliente {
         this.email = email;
         this.senha = senha;
     }
-    Cliente(String nome, int idade,char sexo, String email, String senha, Livro livro){
+    public Cliente(String nome, int idade,char sexo, String email, String senha, Livro livro){
         this.nome = nome;
         this.idade = idade;
         this.sexo = sexo;

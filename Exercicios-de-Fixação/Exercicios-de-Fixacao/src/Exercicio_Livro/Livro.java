@@ -5,12 +5,12 @@ import javax.xml.crypto.Data;
 public class Livro {
     private String nome;
     private String autor;
-    private Data anoDePublicacao;
+    private int anoDePublicacao;
     private Double preco;
     private int numDePaginas;
 
 
-    public Livro(String nome, String autor, Data anoDePublicacao, Double preco, int numDePaginas){
+    public Livro(String nome, String autor, int anoDePublicacao, Double preco, int numDePaginas){
         this.nome = nome;
         this.autor = autor;
         this.anoDePublicacao = anoDePublicacao;
@@ -32,10 +32,10 @@ public class Livro {
         this.autor = autor;
     }
 
-    public Data getAnoDePublicacao() {
+    public int getAnoDePublicacao() {
         return anoDePublicacao;
     }
-    public void setAnoDePublicacao(Data anoDePublicacao) {
+    public void setAnoDePublicacao(int anoDePublicacao) {
         this.anoDePublicacao = anoDePublicacao;
     }
 
@@ -54,7 +54,9 @@ public class Livro {
     }
 
     public Double calcularPrecoPorPagina(){
-        return preco / numDePaginas;
+        double precoPorPagina = preco / numDePaginas;
+        return precoPorPagina;
+
     }
 
     @Override
