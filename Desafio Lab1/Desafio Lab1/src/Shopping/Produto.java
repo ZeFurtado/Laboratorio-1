@@ -37,11 +37,11 @@ public class Produto {
     }
 
     public boolean estaVencido(Data dataValidade){
-        if(dataValidade.getAno() < this.dataValidade.getAno()){
+        if(dataValidade.getAno() > this.dataValidade.getAno()){
             return true;
-        }else if(dataValidade.getMes() < this.dataValidade.getMes()){
+        }else if(dataValidade.getMes() > this.dataValidade.getMes()){
             return true;
-        } else if (dataValidade.getDia() < this.dataValidade.getDia()) {
+        } else if (dataValidade.getDia() > this.dataValidade.getDia()) {
             return true;
         }else {
             return false;

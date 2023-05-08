@@ -79,7 +79,7 @@ public class Data {
 
     public void setMes(int mes){
         if(mes > 0 && mes <= 12){
-
+            this.mes = mes;
         }else {
             this.mes = 1;
         }
