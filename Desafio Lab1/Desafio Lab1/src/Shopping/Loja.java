@@ -65,8 +65,18 @@ public class Loja {
     }
 
 
+    @Override
     public String toString() {
-        return ("A loja " + nome + " possuí "+quantidadeFuncionarios+"funcionários e o salário base deles é de R$:"+salarioBaseFuncionario);
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Nome da loja: " + nome + "\n");
+        stringBuilder.append("Quantidade de funcionários: "+quantidadeFuncionarios+"\n");
+        stringBuilder.append("Salário base dos funcionários: "+salarioBaseFuncionario+"\n");
+        stringBuilder.append("Endereço: " +endereco+"\n");
+        stringBuilder.append("Data de fundação: "+dataDeFundacao+"\n");
+
+        return stringBuilder.toString();
+
     }
 
     public double gastosComSalario() {
