@@ -11,12 +11,13 @@ public class Endereco {
     private String complemento;
 
 
-    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,String complemento){
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero, String complemento){
         this.nomeDaRua = nomeDaRua;
         this.cidade = cidade;
         this.estado = estado;
         this.pais = pais;
         this.cep = cep;
+        this.numero = numero;
         this.complemento = complemento;
     }
 
@@ -82,6 +83,7 @@ public class Endereco {
                 "Estado: "+estado+".\n"+
                 "Pais: "+pais+".\n"+
                 "CEP: "+cep+".\n"+
+                "Número"+numero+".\n"+
                 "Complemento: "+complemento+".\n";
     }
 

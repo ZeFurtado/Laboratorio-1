@@ -2,8 +2,8 @@ package Shopping;
 
 public class Vestuario extends Loja{
     private boolean produtosImportados;
-    public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao, boolean produtosImportados) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataDeFundacao);
+    public Vestuario(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao, boolean produtosImportados, int qtdDeProdutos) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataDeFundacao, qtdDeProdutos);
         this.produtosImportados = produtosImportados;
     }
 
@@ -18,7 +18,7 @@ public class Vestuario extends Loja{
     public String toString(){
         StringBuilder resumo = new StringBuilder();
         resumo.append(super.toString());
-        resumo.append("Produtor importados? " +produtosImportados+"\n");
+        resumo.append("Produtos importados? " +produtosImportados+"\n");
         return resumo.toString();
     }
 }

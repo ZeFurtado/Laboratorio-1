@@ -3,8 +3,8 @@ package Shopping;
 public class Informatica extends Loja{
     private double seguroEletronicos;
 
-    public Informatica(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao, double seguroEletronicos) {
-        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataDeFundacao);
+    public Informatica(String nome, int quantidadeFuncionarios, double salarioBaseFuncionario, Endereco endereco, Data dataDeFundacao, int qtdDeProdutos, double seguroEletronicos) {
+        super(nome, quantidadeFuncionarios, salarioBaseFuncionario, endereco, dataDeFundacao, qtdDeProdutos);
         this.seguroEletronicos = seguroEletronicos;
     }
 
