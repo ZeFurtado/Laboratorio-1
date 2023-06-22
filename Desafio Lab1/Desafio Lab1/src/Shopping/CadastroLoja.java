@@ -13,7 +13,8 @@ public class CadastroLoja extends JFrame{
     }
 
     public static void main(String[] args){
-        
+        JFrame frame = new CadastroLoja("Tela de Cadastro");
+        frame.setVisible(true);
     }
 
 
